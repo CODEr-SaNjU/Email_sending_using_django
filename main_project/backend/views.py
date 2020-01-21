@@ -25,8 +25,11 @@ class EmailAttachementView(View):
             files = request.FILES.getlist('attach')
             try:
                 mail = EmailMessage(subject,message,settings.EMAIL_HOST_USER,[email])
-                for f in files:
-                    mail.attach(f.name,f.read(),f.content_type)
+                if files:
+                    for f in files:
+                        mail.attach(f.name,f.read(),f.content_type)
+                        mail.send()
+                else:
                     mail.send()
                 return render(request,self.template_name,{'email_form':form,'error_message':'sent Email to %s'%email})
             except:
