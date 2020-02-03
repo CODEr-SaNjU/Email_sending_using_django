@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 django-crispy-forms = "*"
+xhtml2pdf = "*"
 
 [requires]
 python_version = "3.6"
