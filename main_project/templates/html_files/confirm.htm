@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Attachment - Django and Python</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style>
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media screen and (max-width: 600px){
+    .col-25, .col-75{
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  </style>
+</head>
+<body>
+<div class="container" style="border-radius: 5px;background-color: teal; padding: 20px;">
+  <h1 class="mt-5 mb-3">you confirm this mail</h1>
+  <form method="POST" action ="http://127.0.0.1:5500/backend/templates/html_files/try.htm" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-25" style="float: left;width: 25%;margin-top: 6px;">
+      <label for="message" style="padding: 12px 12px 12px 0;display: inline-block;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">sender mail</label>
+    </div>
+    <div class="col-75" style="  float: left;width: 100%;margin-top: 6px;">
+    <input type="text" readonly id="project" value={{to}} style="  width: 100%;padding: 12px;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;resize: vertical">
+  </div>
+</div>
+<div class="row">
+  <div class="col-25" style="float: left;width: 25%;margin-top: 6px;">
+    <label for="Designation" style="padding: 12px 12px 12px 0;display: inline-block;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Designation</label>
+  </div>
+  <div class="col-75" style="float: left;width: 100%;margin-top: 6px;">
+    <input type="text" readonly id="Designation" value={{Designation}} style="width: 100%;padding: 12px;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;resize: vertical">
+  </div>
+</div>
+<div class="row">
+  <div class="col-25" style="float: left;width: 25%;margin-top: 6px;">
+    <label for="project" style="padding: 12px 12px 12px 0;display: inline-block;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">project</label>
+  </div>
+  <div class="col-75" style="float: left;width: 100%;margin-top: 6px;">
+    <input type="text" readonly id="project" value={{project}} style="width: 100%;padding: 12px;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;resize: vertical">
+  </div>
+</div>
+<div class="row">
+  <div class="col-25" style="float: left;width: 25%;margin-top: 6px;">
+    <label for="project" style="padding: 12px 12px 12px 0;display: inline-block;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">subject</label>
+  </div>
+  <div class="col-75" style="float: left;width: 100%;margin-top: 6px;">
+    <input type="text" readonly id="subject" value={{subject}} style="width: 100%;padding: 12px;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;resize: vertical">
+  </div>
+</div>
+<div class="row">
+  <div class="col-25" style="float: left;width: 25%;margin-top: 6px;">
+    <label for="message" style="padding: 12px 12px 12px 0;display: inline-block;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">message</label>
+  </div>
+  <div class="col-75" style="float: left;width: 100%;margin-top: 6px;">
+    <textarea readonly id="message" style="width: 100%;padding:12px; border:1px solid #ccc; border-radius: 4px;box-sizing: border-box;resize: vertical; height:200px">{{message}}</textarea>
+  </div>
+</div>
+<button type="submit" value="send" id="yes" style="background-color: #4CAF50; /* Green */border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">yes</button>
+<button type="reset" value="cancel" id="no" style="background-color: Red; /* Green */border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">no</button>
+</form>
+</div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
