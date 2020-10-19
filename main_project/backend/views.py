@@ -47,3 +47,8 @@ class EmailAttachementView(View):
             except:
                 return render(request,self.template_name,{'email_form':form,})
         return render(request, self.template_name, {'email_form': form, 'error_message': 'Unable to send email. Please try again later'})             
+
+
+
+def Home_page(request):
+    return render(request,'html_files/Dashboard.htm')
