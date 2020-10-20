@@ -52,3 +52,7 @@ from .models import EmailData
 
 def Home_page(request):
     return render(request,'html_files/Dashboard.htm')
+
+
+def inbox(request):
+    return render(request,'html_files/Logout.htm')
